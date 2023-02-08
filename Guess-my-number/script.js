@@ -18,6 +18,7 @@ const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
 
+document.querySelector('again').addEventListener('click');
 document.querySelector('.again').addEventListener('click', function () {
   score = 20;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
