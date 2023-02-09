@@ -1,37 +1,49 @@
 'use strict';
 
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.close-modal');
-const btnsOpenModal = document.querySelectorAll('.show-modal');
-console.log(btnsOpenModal);
+// ----------  HOISTING -----------------------//
 
-function closeModal() {
-  modal.classList.add('hidden');
-  overlay.classList.add('hidden');
-  //samo se dodaju na classlist(ime classe) hidden da bi se zatvorili
-  //modal i overlayer layer
+//START CODE
+console.log(me);
+console.log(job);
+console.log(year);
+
+//TDZ - TEMPORAL DEAD ZONE TILL VAR ARE DECLARED
+
+var me = 'Jonas';
+let job = 'teacher';
+const year = 1991;
+
+//FUNCTIONS
+console.log(addDecl(2, 3));
+console.log(addExpr(2, 3));
+console.log(addArrow(2, 3));
+
+//works bcs it is function declaration and hoisting "pick him up to start"
+//so we can use function before declaration
+function addDecl(a, b) {
+  return a + b;
 }
 
-function openModal() {
-  console.log('Button clicked');
-  modal.classList.remove('hidden');
-  overlay.classList.remove('hidden');
-  //pisemo hidden da bismo uklonili classlist hiddne
-  //da se ukloni hidden iz css-a
-  //kada se ukloni hidden onda se modal pojavljuje i overlay
-  //layer za gasenje modala koji se nalazi iza
+//addexpr and addArrow are now in TDZ bcs they are decleared as const or let or var
+const addExpr = function (a, b) {
+  return a + b;
+};
+
+const addArrow = (a, b) => a + b;
+
+// EXAMPLE
+
+if (!numProducts) deleteShoppingCart();
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log('All products deleted!');
 }
+//It will delete all products, bcs of start product it will triger function before numProducts is declared as 10
+//dont use var to declare variables, use const and let
+//declare var at start of each scope
 
-//Bira koji od 3 modala sam kliknuo
-for (let i = 0; i < btnsOpenModal.length; i++)
-  btnsOpenModal[i].addEventListener('click', openModal);
-//---------------------------------------------------------//
-btnCloseModal.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
-
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-    closeModal();
-  }
-});
+var x = 1;
+let y = 2;
+const z = 3;
