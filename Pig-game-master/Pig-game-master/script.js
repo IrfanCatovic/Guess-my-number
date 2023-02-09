@@ -31,9 +31,11 @@ let playing = true; //da li smo dobili 100
 function switchPlayer() {
   document.getElementById(`current--${activePlayer}`).textContent = 0; //Pre promene igraca vracamo trenutni score na 0
   activePlayer = activePlayer === 0 ? 1 : 0; //change player, we ask if it is player 0 we want new active player 1, if not we want new player to be 0
-  currentScore = 0; //
-  player0El.classList.toggle('player--active'); //mchange active player with toggle
-  player1El.classList.toggle('player--active');
+  currentScore = 0; //trenutni rezultat na 0
+  player0El.classList.toggle('player--active'); //change active player with toggle
+  player1El.classList.toggle('player--active'); //check if it is on classlist and remove it, if it's not add on class list
+  //u HTML imamo na jednom igracu upisano active player
+  //zbog toga kada toggle radi, uvek ce biti jedan bez player--active
 }
 
 init();
