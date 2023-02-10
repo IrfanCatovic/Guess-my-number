@@ -163,3 +163,97 @@ console.log('Me', me);
 //so we bouth use same adress and when we change something on one
 //we change on bouth
 */
+
+/*
+//Primitive types
+let lastName = 'williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+
+//Reference types
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage', jessica);
+console.log('After marriage', marriedJessica);
+
+// Copying objects
+
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Alice', 'Bob'],
+};
+
+const jessicaCopy = Object.assign({}, jessica2); //merge 2 objects and return one new object, one empty and one created
+jessicaCopy.lastName = 'Davis';
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('John'); //we can't copy objects with arrays, it will copy in both objects
+console.log('Before marriage', jessica2);
+console.log('After marriage', jessicaCopy);
+*/
+
+/*
+//------------------------ DATA STRUCTURING -----------------------
+
+//DESTRUCTURING ARRAYS
+
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+};
+
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+const [x, y, z] = arr; //razlozio ih - destructuring array into variables
+console.log(x, y, z);
+
+let [main, secondary] = restaurant.categories; //first and second element
+const [prvi, , treci] = restaurant.categories; //preskacemo drugi
+
+console.log(main, secondary);
+
+//switching var
+let temp = main;
+main = secondary;
+secondary = temp; // MENJAMO PRVI I DRUGI
+console.log(main, secondary);
+
+[main, secondary] = [secondary, main]; //umesto code gore da koristimo temp
+console.log(main, secondary);
+
+console.log(restaurant.order(2, 0));
+
+//Recive 2 return values from a function
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+
+//NESTED ARRAYS
+const nested = [2, 4, [5, 6]];
+//const [i, , j] = nested; //nested arrays destruction on var and array
+//console.log(i, j);
+
+const [i, , [j, k]] = nested;
+console.log(i, j, k); //nested arrays destruction on var
+
+// Default values
+const [p, q, r] = [8, 9];
+console.log(p, q, r);
+*/
