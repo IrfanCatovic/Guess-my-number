@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 // ----------  HOISTING -----------------------//
 
 //START CODE
@@ -47,3 +48,54 @@ function deleteShoppingCart() {
 var x = 1;
 let y = 2;
 const z = 3;
+*/
+
+//-----------THIS KEYWORD-------------
+
+/*
+console.log(this);
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+
+calcAge(1991);
+
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this);
+};
+
+calcAgeArrow(1991);
+
+const Jonas = {
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+};
+
+Jonas.calcAge();
+
+const matilda = {
+  year: 2017,
+};
+
+matilda.calcAge = Jonas.calcAge; //kopiramo calcAge function
+matilda.calcAge();
+
+const f = Jonas.calcAge; // kopiramo funkciju
+f();
+*/
+
+const Jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+  greet: () => console.log(`hey ${this.firstName}`),
+};
+Jonas.greet();
