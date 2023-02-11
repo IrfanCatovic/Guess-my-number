@@ -330,3 +330,30 @@ const {
 } = openingHours;
 
 console.log(o, c);
+
+//SPREAD OPERATOR
+//EXPAND AN ARRAY INTO ALL ITS ELEMENTS
+
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]]; //bad way to create arr same as last one
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr]; //spread operator  (...nameOfArr);
+console.log(newArr);
+
+console.log(...newArr); //log individual elements of array [1,2,7,8,9];
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+//Copy arr
+const mainMenuCopy = [...restaurant.mainMenu];
+
+//joing 2 arrays
+const menuMerg = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menuMerg);
+
+// iterables: arrays, strings, maps, sets. NOT objects
+const str = 'Jonas';
+const letters = [...str, '', 'S.'];
+console.log(letters);
