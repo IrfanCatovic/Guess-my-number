@@ -292,6 +292,11 @@ const restaurant = {
       `Odred received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivere to ${adress} at ${time} `
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is you delicious pasta with ${ing1}, ${ing2} and ${ing3}`
+    );
+  },
 };
 
 restaurant.orderDelivery({
@@ -357,3 +362,37 @@ console.log(menuMerg);
 const str = 'Jonas';
 const letters = [...str, '', 'S.'];
 console.log(letters);
+
+//Real world example
+const ingredients = [
+  // prompt("Let's make pasta! Ingredient 1?"),
+  // prompt("Let's make pasta! Ingredient 2?"),
+  // prompt("Let's make pasta! Ingredient 3?"),
+]; //create array with prompt window
+console.log(ingredients);
+
+restaurant.orderPasta(...ingredients); //instead of doing igredients[0], igredients[1], igredients[2]...
+
+//Object
+const newRetaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.Name);
+console.log(restaurant.Name);
+
+//REST PATTERN AND PARAMETERS
+//OD ELEMENATA PRAVI ARRAY
+//spread bcs on RIGHT side of =
+
+const arrRest = [1, 2, ...[3, 4]];
+
+// REST, because of LEFT side of =
+const [x, y, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , Risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, Risotto, otherFood);
