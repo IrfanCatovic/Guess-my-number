@@ -425,11 +425,11 @@ restaurant.orederPizza('mushrooms', 'onion', 'olives', 'spinach'); //odvaja ih j
 restaurant.orederPizza('mushrooms'); //we will still have empty array
 */
 
-//OPERATORS && AND ||
+//OPERATORS && AND ||  ---------------------------------------
 //use ANY data type, return ANY data type, do short-circuting
 
 //OR OPERATOR ||
-
+/*
 console.log(3 || 'Jonas'); //output 3
 //means if the first value is true value, it return it  (for OR operator)
 
@@ -456,3 +456,15 @@ if (restaurant.orderPizza) {
   restaurant.orderPizza('mushrooms', 'spinach');
 }
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach'); //if restaurant.orederPizza does exists, we call that function
+*/
+
+//NULISH VALUE ---------------------------------------
+
+// restaurant.numGuests = 0;
+
+const guest = restaurant.numGuests || 10;
+console.log(guest);
+
+//Nullish value: null and undefined (NOT 0 or '');
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
