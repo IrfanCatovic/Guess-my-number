@@ -263,6 +263,7 @@ console.log(p, q, r);
 //to destruct objects we use curly brackets
 //we have to specify name of properties
 
+/*
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -422,3 +423,36 @@ add(...p); // kupi sve elemente iz x i salje ih u func gde ih i on kupi sa rest
 
 restaurant.orederPizza('mushrooms', 'onion', 'olives', 'spinach'); //odvaja ih jer je prvi parametar ustv parametar, a drugi je ...rest i skuplja ih u array
 restaurant.orederPizza('mushrooms'); //we will still have empty array
+*/
+
+//OPERATORS && AND ||
+//use ANY data type, return ANY data type, do short-circuting
+
+//OR OPERATOR ||
+
+console.log(3 || 'Jonas'); //output 3
+//means if the first value is true value, it return it  (for OR operator)
+
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null); //output Hello
+
+// restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10; //proveravamo da li postoji rest.numGuests ako postoji to pise, ako ne onda je broj 10
+
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+//AND OPERATOR &&
+console.log(0 && 'Jonas'); //output 0 bcs AND operator looks for first falsy value
+
+console.log('Hello' && 23 && null & 'jonas'); //output null
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach'); //if restaurant.orederPizza does exists, we call that function
