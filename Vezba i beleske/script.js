@@ -456,7 +456,7 @@ if (restaurant.orderPizza) {
   restaurant.orderPizza('mushrooms', 'spinach');
 }
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach'); //if restaurant.orederPizza does exists, we call that function
-*/
+
 
 //NULISH VALUE ---------------------------------------
 
@@ -468,3 +468,22 @@ console.log(guest);
 //Nullish value: null and undefined (NOT 0 or '');
 const guestsCorrect = restaurant.numGuests ?? 10;
 console.log(guestsCorrect);
+
+*/
+
+// LOOP FOR OF
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const item of menu.entries()) {
+  //if we want number of element in array
+  console.log(`${item[0] + 1}: ${item[1]}`);
+}
+
+//SAME THING BUT ARRAY IS DESTRUCTED,   I is number of element in array, el is element of array, we can see that bcs of entries()
+for (const [i, el] of menu.entries()) {
+  //if we want number of element in array
+  console.log(`${item[i] + 1}: ${item[el]}`);
+}
