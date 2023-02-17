@@ -50,7 +50,7 @@ let y = 2;
 const z = 3;
 */
 
-//-----------THIS KEYWORD-------------
+//-----------THIS KEYWORD---------------------------------------
 
 /*
 console.log(this);
@@ -471,7 +471,8 @@ console.log(guestsCorrect);
 
 */
 
-// LOOP FOR OF
+/*
+// LOOP FOR OF -------------------------------------------------------------------
 
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
@@ -487,3 +488,35 @@ for (const [i, el] of menu.entries()) {
   //if we want number of element in array
   console.log(`${item[i] + 1}: ${item[el]}`);
 }
+*/
+
+// OBJECT LITERALS ----------------
+
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  openingHours, //We can use it bcs we declared openingHours outside the object
+  order(starterIndex, mainIndex) {
+    //it's function but new way to write it
+    return this.starterMenu[starterIndex], this.mainMenu[mainIndex];
+  },
+};
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[6]]: {
+    open: 0, //open 24hours
+    close: 24,
+  },
+};
