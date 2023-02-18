@@ -520,3 +520,15 @@ const openingHours = {
     close: 24,
   },
 };
+
+//OPTIONAL CHAINING -------------------------------------
+//when we check for variable if it doesn't exist it will return undefined, and not an error
+
+if (restaurant.openingHours && restaurant.openingHours.mon.open)
+ console.log(restaurant.openingHours.mon.open)  ;
+
+//with optional chaining
+console.log(restaurant.openingHours.mon?.open); //only if prop before question mark the next propt will be read
+
+
+ 
