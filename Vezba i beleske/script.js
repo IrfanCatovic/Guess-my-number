@@ -525,7 +525,7 @@ const openingHours = {
 //when we check for variable if it doesn't exist it will return undefined, and not an error
 
 if (restaurant.openingHours && restaurant.openingHours.mon.open)
- console.log(restaurant.openingHours.mon.open)  ;
+  console.log(restaurant.openingHours.mon.open);
 
 //with optional chaining
 console.log(restaurant.openingHours.mon?.open); //only if prop before question mark the next propt will be read
@@ -535,24 +535,37 @@ console.log(restaurant.openingHours?.mon?.open); //only if prop before question 
 
 const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
-for(const day of days){
+for (const day of days) {
   console.log(day);
   const open = restaurant.openingHours[day]?.open ?? 'closed'; // ?? is nulish operator bcs 0 is value of hours and it's defined
   console.log(`On ${day}, we open at ${open}`);
-
-} 
+}
 
 //Methods
 
-console.log(restaurant.order?.(0,1) ?? 'Method does not exist');
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
 // console.log(restaurant.orderRissoto?.(0,1) ?? 'Method does not exist');
 
 //Arrays
-const users = [
-  {name: 'jonas', email: 'hello@gmail.com'}];
-  console.log(users[0]?.name ?? 'User array empty');
+const users = [{ name: 'jonas', email: 'hello@gmail.com' }];
+console.log(users[0]?.name ?? 'User array empty');
 
-  // if(users.length > 0) console.log(users[0].name);
-  // else console.log('User array is empty');  this code is changed by code below
+// if(users.length > 0) console.log(users[0].name);
+// else console.log('User array is empty');  this code is changed by code below
 
-  
+// Quiz app
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+// const answer = Number(prompt('Your answer'));
+const answer = 3;
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));
+
+// Convert map to array
+console.log([...question]);
+// console.log(question.entries());
+console.log([...question.keys()]);
+console.log([...question.values()]);
