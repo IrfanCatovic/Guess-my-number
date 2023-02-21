@@ -15,6 +15,7 @@ let job = 'teacher';
 const year = 1991;
 
 //FUNCTIONS
+
 console.log(addDecl(2, 3));
 console.log(addExpr(2, 3));
 console.log(addArrow(2, 3));
@@ -68,6 +69,7 @@ const calcAgeArrow = birthYear => {
 
 calcAgeArrow(1991);
 
+//object - method
 const Jonas = {
   year: 1991,
   calcAge: function () {
@@ -259,7 +261,7 @@ const [p, q, r] = [8, 9];
 console.log(p, q, r);
 */
 
-//DESTRUCTURING OBJECTS
+//DESTRUCTURING OBJECTS -----------------------------------------------
 //to destruct objects we use curly brackets
 //we have to specify name of properties
 
@@ -341,7 +343,7 @@ const {
 
 console.log(o, c);
 
-//SPREAD OPERATOR
+//SPREAD OPERATOR----------------------------------------------------
 //EXPAND AN ARRAY INTO ALL ITS ELEMENTS
 
 const arr = [7, 8, 9];
@@ -386,9 +388,10 @@ restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.Name);
 console.log(restaurant.Name);
 
-//REST PATTERN AND PARAMETERS
+//REST PATTERN AND PARAMETERS -------------------------------
 //OD ELEMENATA PRAVI ARRAY
 //spread bcs on RIGHT side of =
+
 
 // 2) destructuring
 const arrRest = [1, 2, ...[3, 4]];
@@ -492,7 +495,7 @@ for (const [i, el] of menu.entries()) {
 
 // OBJECT LITERALS ----------------
 
-const restaurant = {
+/*const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
@@ -555,4 +558,5 @@ const users = [
   // if(users.length > 0) console.log(users[0].name);
   // else console.log('User array is empty');  this code is changed by code below
 
-  
+*/  
+
