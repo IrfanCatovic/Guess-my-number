@@ -200,20 +200,19 @@ console.log('Before marriage', jessica2);
 console.log('After marriage', jessicaCopy);
 */
 
-/*
-        //------------------------ DATA STRUCTURING -----------------------
+//------------------------ DATA STRUCTURING -----------------------
 
 //DESTRUCTURING ARRAYS
 //we dont need to specify name of properties
 
-const restaurant = {
+/*const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  categories: ['Italian', 'Pizzeria', 'Vegetari an', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
+  order: functio n (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 };
@@ -232,13 +231,18 @@ const [prvi, , treci] = restaurant.categories; //preskacemo drugi
 console.log(main, secondary);
 
 //switching var
-let temp = main;
-main = secondary;
-secondary = temp; // MENJAMO PRVI I DRUGI
+// let temp = main;
+// main = secondary;
+// secondary = temp; // MENJAMO PRVI I DRUGI
+// console.log(main, secondary);
 console.log(main, secondary);
 
-[main, secondary] = [secondary, main]; //umesto code gore da koristimo temp
+console.log('switch');
+[secondary, main] = [main, secondary];
 console.log(main, secondary);
+// [main, secondary] = [secondary, main]; //umesto code gore da koristimo temp
+// console.log(main, secondary);
+//nebitno je koji se gde pise u zagradi kada hocemo da ih zamenimo
 
 console.log(restaurant.order(2, 0));
 
@@ -258,7 +262,6 @@ console.log(i, j, k); //nested arrays destruction on var
 const [p, q, r] = [8, 9];
 console.log(p, q, r);
 */
-
 //DESTRUCTURING OBJECTS
 //to destruct objects we use curly brackets
 //we have to specify name of properties
@@ -492,7 +495,7 @@ for (const [i, el] of menu.entries()) {
 
 // OBJECT LITERALS ----------------
 
-const restaurant = {
+/*const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
@@ -541,6 +544,8 @@ for (const day of days) {
   console.log(`On ${day}, we open at ${open}`);
 }
 
+
+
 //Methods
 
 console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
@@ -553,7 +558,7 @@ console.log(users[0]?.name ?? 'User array empty');
 // if(users.length > 0) console.log(users[0].name);
 // else console.log('User array is empty');  this code is changed by code below
 
-// Quiz app
+// Quiz appX
 console.log(question.get('question'));
 for (const [key, value] of question) {
   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
@@ -568,4 +573,77 @@ console.log(question.get(question.get('correct') === answer));
 console.log([...question]);
 // console.log(question.entries());
 console.log([...question.keys()]);
-console.log([...question.values()]);
+console.log([...question.values()]);*/
+
+// Logical Assignment Operators
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// OR assignment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// nullish assignment operator (null or undefined)
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// AND assignment operator
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
+
+///////////////////////////////////////
+// The Nullish Coalescing Operator
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+// Nullish: null and undefined (NOT 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+///////////////////////////////////////
+// Short Circuiting (&& and ||)
+
+console.log('---- OR ----');
+// Use ANY data type, return ANY data type, short-circuiting
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuests = 0;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log('---- AND ----');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+
+console.log('Hello' && 23 && null && 'jonas');
+
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
