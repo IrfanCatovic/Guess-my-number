@@ -495,7 +495,7 @@ for (const [i, el] of menu.entries()) {
 
 // OBJECT LITERALS ----------------
 
-/*const restaurant = {
+const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
@@ -525,6 +525,7 @@ const openingHours = {
 };
 
 //OPTIONAL CHAINING -------------------------------------
+
 //when we check for variable if it doesn't exist it will return undefined, and not an error
 
 if (restaurant.openingHours && restaurant.openingHours.mon.open)
@@ -544,33 +545,6 @@ for (const day of days) {
   console.log(`On ${day}, we open at ${open}`);
 }
 
-
-
-//Methods
-
-console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
-// console.log(restaurant.orderRissoto?.(0,1) ?? 'Method does not exist');
-
-//Arrays
-const users = [{ name: 'jonas', email: 'hello@gmail.com' }];
-console.log(users[0]?.name ?? 'User array empty');
-
-// if(users.length > 0) console.log(users[0].name);
-// else console.log('User array is empty');  this code is changed by code below
-
-// Quiz appX
-console.log(question.get('question'));
-for (const [key, value] of question) {
-  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+for (const day of Object.keys(openingHours)) {
+  console.log(day);
 }
-// const answer = Number(prompt('Your answer'));
-const answer = 3;
-console.log(answer);
-
-console.log(question.get(question.get('correct') === answer));
-
-// Convert map to array
-console.log([...question]);
-// console.log(question.entries());
-console.log([...question.keys()]);
-console.log([...question.values()]);*/
