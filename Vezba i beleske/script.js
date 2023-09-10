@@ -495,7 +495,7 @@ for (const [i, el] of menu.entries()) {
 
 // OBJECT LITERALS ----------------
 
-const restaurant = {
+/*const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
@@ -548,3 +548,62 @@ for (const day of days) {
 for (const day of Object.keys(openingHours)) {
   console.log(day);
 }
+*/
+
+//STARI NACIN ZA KLASE
+
+/*
+class Human {
+  constructor(){
+    this.gender = 'male';
+  }
+
+  printGender() {
+    console.log(this.gender);
+  }
+}
+
+class Person extends Human { //extends znaci naslediti - inherit - a to znaci preuzeti sve od njega
+  constructor(){
+    super(); //Moramo da nazovemo super constructor zvog nasledjivanja 
+    this.name = 'Max'
+  }
+
+  printMyName() {
+    console.log(this.name);
+  }
+
+}
+
+
+
+//CLASSES ARE BLUEPRINT FOR OBJECTS
+
+const person = new Person();
+person.printMyName();
+person.printGender();
+*/
+
+class Human {
+  gender = 'male';
+}
+
+printGender = () => {
+  console.log(this.gender);
+};
+
+class Person extends Human {
+  //extends znaci naslediti - inherit - a to znaci preuzeti sve od njega
+  //Moramo da nazovemo super constructor zvog nasledjivanja
+  name = 'Max';
+
+  printMyName = () => {
+    console.log(this.name);
+  };
+}
+
+const numbers = [1, 2, 3];
+
+const doubleNumArray = numbers.map(num => {
+  return num * 2; //map znaci da vuce sve clanove ovog niza nesto kao for
+});
